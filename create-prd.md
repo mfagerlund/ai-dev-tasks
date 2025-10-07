@@ -16,7 +16,13 @@ To guide an AI assistant in creating a detailed Product Requirements Document (P
     - Present all 3 options clearly labeled (Option 1, Option 2, Option 3)
     - Ask user to select their preferred mockup (1, 2, or 3)
 5.  **Add Mockup to PRD:** Once the user selects a mockup, add it to the "Design Considerations" section of the PRD
-6.  **Save PRD:** Save the generated document as `[n]-prd-[feature-name].md` inside the `/tasks` directory. (Where `n` is a zero-padded 4-digit sequence starting from 0001, e.g., `0001-prd-user-authentication.md`, `0002-prd-dashboard.md`, etc.)
+6.  **Generate Core Types:** After mockup signoff, design and present the core type definitions for user review:
+    - Include a header comment in the types file: "// Do not reference by ID. Create DTOs for serialization in serializations.ts"
+    - Define all core domain types (entities, enums, interfaces) based on the PRD requirements
+    - Use strong references (object references, not IDs) for in-memory relationships
+    - Present the types to the user for review and approval
+    - Note: Serialization DTOs are NOT part of this initial types task
+7.  **Save PRD:** Save the generated document as `[n]-prd-[feature-name].md` inside the `/tasks` directory. (Where `n` is a zero-padded 4-digit sequence starting from 0001, e.g., `0001-prd-user-authentication.md`, `0002-prd-dashboard.md`, etc.)
 
 ## Clarifying Questions (Examples)
 
@@ -63,3 +69,5 @@ Assume the primary reader of the PRD is a **junior developer**. Therefore, requi
 3. Take the user's answers to the clarifying questions and improve the PRD
 4. Generate 3 barebones UI mockup options using HTML and the project's CSS framework
 5. Wait for user to select their preferred mockup before finalizing the PRD
+6. After mockup selection, generate and present core type definitions for user review (with header comment about not using ID references)
+7. Wait for user approval on types before saving the PRD
