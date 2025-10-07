@@ -9,7 +9,14 @@ To guide an AI assistant in creating a detailed Product Requirements Document (P
 1.  **Receive Initial Prompt:** The user provides a brief description or request for a new feature or functionality.
 2.  **Ask Clarifying Questions:** Before writing the PRD, the AI *must* ask clarifying questions to gather sufficient detail. The goal is to understand the "what" and "why" of the feature, not necessarily the "how" (which the developer will figure out). Make sure to provide options in letter/number lists so I can respond easily with my selections.
 3.  **Generate PRD:** Based on the initial prompt and the user's answers to the clarifying questions, generate a PRD using the structure outlined below.
-4.  **Save PRD:** Save the generated document as `[n]-prd-[feature-name].md` inside the `/tasks` directory. (Where `n` is a zero-padded 4-digit sequence starting from 0001, e.g., `0001-prd-user-authentication.md`, `0002-prd-dashboard.md`, etc.)
+4.  **Generate UI Mockup Options:** Create 3 different barebones UI mockup options for the feature:
+    - Check the project for existing CSS framework (Tailwind, Bootstrap, etc.) and use that
+    - Generate simple, functional HTML with inline styling or CSS classes from the detected framework
+    - Keep mockups minimal - focus on layout and key UI elements only
+    - Present all 3 options clearly labeled (Option 1, Option 2, Option 3)
+    - Ask user to select their preferred mockup (1, 2, or 3)
+5.  **Add Mockup to PRD:** Once the user selects a mockup, add it to the "Design Considerations" section of the PRD
+6.  **Save PRD:** Save the generated document as `[n]-prd-[feature-name].md` inside the `/tasks` directory. (Where `n` is a zero-padded 4-digit sequence starting from 0001, e.g., `0001-prd-user-authentication.md`, `0002-prd-dashboard.md`, etc.)
 
 ## Clarifying Questions (Examples)
 
@@ -34,7 +41,7 @@ The generated PRD should include the following sections:
 3.  **User Stories:** Detail the user narratives describing feature usage and benefits.
 4.  **Functional Requirements:** List the specific functionalities the feature must have. Use clear, concise language (e.g., "The system must allow users to upload a profile picture."). Number these requirements.
 5.  **Non-Goals (Out of Scope):** Clearly state what this feature will *not* include to manage scope.
-6.  **Design Considerations (Optional):** Link to mockups, describe UI/UX requirements, or mention relevant components/styles if applicable.
+6.  **Design Considerations:** Include the selected UI mockup (barebones HTML with CSS framework classes). Also describe any UI/UX requirements or mention relevant components/styles if applicable.
 7.  **Technical Considerations (Optional):** Mention any known technical constraints, dependencies, or suggestions (e.g., "Should integrate with the existing Auth module").
 8.  **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase user engagement by 10%", "Reduce support tickets related to X").
 9.  **Open Questions:** List any remaining questions or areas needing further clarification.
@@ -54,3 +61,5 @@ Assume the primary reader of the PRD is a **junior developer**. Therefore, requi
 1. Do NOT start implementing the PRD
 2. Make sure to ask the user clarifying questions
 3. Take the user's answers to the clarifying questions and improve the PRD
+4. Generate 3 barebones UI mockup options using HTML and the project's CSS framework
+5. Wait for user to select their preferred mockup before finalizing the PRD
