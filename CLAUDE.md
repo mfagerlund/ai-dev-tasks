@@ -65,3 +65,9 @@ All workflows are designed for junior developers - be explicit, unambiguous, and
 - **Iterative approach**: One task at a time, with user control
 - **Progress tracking**: Visual representation of completed work
 - **Strong typing**: Use object references in core types, not IDs; DTOs are separate
+
+## Project card
+
+`project-card/` holds this project's one-liner, tags and image for the cross-project index.
+When the purpose or the look of the project changes materially, regenerate it with
+`/project-index ai-dev-tasks`.
